@@ -14,6 +14,7 @@ fruits ++ diag3
 fruits.updated(0, "Banana")
 fruits.indexOf("Mangoes")
 fruits.contains("Pears")
+fruits.splitAt(2)
 
 def last[T](xs: List[T]): T = xs match {
   case List() => throw new Error("last of empty list")
@@ -43,9 +44,9 @@ reverse(fruits)
 
 def removeAt[T](n: Int, xs: List[T]): List[T] = xs match {
   case List() => throw new Error(s"remove at $n from empty list")
-  case List(x) if n != 0 => throw new Error("index out of bound")
-  case List(x) => List()
-  case y :: ys if n == 0 => ys
+  case List(_) if n != 0 => throw new Error("index out of bound")
+  case List(_) => List()
+  case _ :: ys if n == 0 => ys
   case y :: ys => y :: removeAt(n - 1, ys)
 }
 removeAt(0, List("abc"))
