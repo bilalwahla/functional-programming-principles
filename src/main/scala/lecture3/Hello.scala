@@ -21,7 +21,7 @@ object Hello {
     println(tree3.max)
     println(tree3.remove(tree3.max))
     println(new Cons(tree3.max, new Nil).head)
-    val orderedList: List[Int] = tree3.descendingByInt
+    val orderedList: List[Int] = tree3.ascendingByInt
     orderedList foreach println
   }
 

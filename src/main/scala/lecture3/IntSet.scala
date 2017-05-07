@@ -18,7 +18,7 @@ abstract class IntSet {
 
   def max: Int
 
-  def descendingByInt: List[Int] = {
+  def ascendingByInt: List[Int] = {
     def order(subset: IntSet, orderedList: List[Int]): List[Int] = {
       val maxInt = subset.max
       val remainderSet = subset.remove(maxInt)
