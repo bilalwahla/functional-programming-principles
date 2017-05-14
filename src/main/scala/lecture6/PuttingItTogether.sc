@@ -45,3 +45,22 @@ encode("7225247386")
 def translate(number: String): Set[String] = encode(number) map(_ mkString " ")
 
 translate("7225247386")
+
+val str = "I sold my civic and bought a new civic, not sure when this civic will be sold"
+str.split(" ").groupBy(s => s.toLowerCase)
+str.groupBy(s => s.toLower).mapValues(_.length).toList
+
+val word = "Civic,"
+word groupBy(c => c) map(p => (p._1, p._2.length))
+def f(word: String) =
+  word.filter(c => c.isLetter).groupBy(c => c.toLower).mapValues(_.length).toList.sorted
+f(word)
+f(str)
+f("abcd")
+
+val wordsOfPoem = List(
+  "Mary", "had", "a", "little", "lamb", "its", "fleece", "was",
+  "white", "as", "snow", "and", "everywhere", "that", "Mary",
+  "went", ", ", "the", "lamb", "was", "sure", "to", "go"
+)
+f(wordsOfPoem.mkString)
